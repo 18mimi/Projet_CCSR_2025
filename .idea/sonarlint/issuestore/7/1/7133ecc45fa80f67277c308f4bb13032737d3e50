@@ -1,0 +1,16 @@
+
+n	java:S101	"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ά΅Φυÿÿÿÿÿ8ΎκαΘ2
+9
+java:S1700"Rename field "producer"(χίΑÿωÿÿÿÿ8ΑκαΘ2
+U	java:S106"9Replace this use of System.out or System.err by a logger.(α§Τ¶8λαΘ2
+Z	java:S106 "9Replace this use of System.out or System.err by a logger.(ώΎ­ώÿÿÿÿ8λαΘ2
+Z	java:S106#"9Replace this use of System.out or System.err by a logger.(Ϊ½¶ϊÿÿÿÿ8λαΘ2
+Z	java:S106)"9Replace this use of System.out or System.err by a logger.(—™ª©ύÿÿÿÿ8”λαΘ2
+Z	java:S106,"9Replace this use of System.out or System.err by a logger.(ώ”­¶ϋÿÿÿÿ8›λαΘ2
+\
+java:S62138":Rename this variable to not match a restricted identifier.(ΤβΘΘώÿÿÿÿ8λαΘ2
+U	java:S106<"9Replace this use of System.out or System.err by a logger.(©–ζΕ8λαΘ2
+Z	java:S106="9Replace this use of System.out or System.err by a logger.(Κ¬Ηϊωÿÿÿÿ8λαΘ2
+Z	java:S106>"9Replace this use of System.out or System.err by a logger.(π±ρκωÿÿÿÿ8λαΘ2
+Z	java:S106?"9Replace this use of System.out or System.err by a logger.(«Η»υψÿÿÿÿ8ΆλαΘ2
+Z	java:S106D"9Replace this use of System.out or System.err by a logger.(Φ…ω‡ώÿÿÿÿ8Α•›Θ2

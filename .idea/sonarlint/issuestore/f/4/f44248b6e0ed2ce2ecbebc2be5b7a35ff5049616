@@ -1,0 +1,10 @@
+
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(§üûÕıÿÿÿÿ
+q
+java:S2095j"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(×•µ¢ÿÿÿÿÿ8ÁÂÑÈ2
+l
+java:S2095("JUse try-with-resources or close this "KafkaStreams" in a "finally" clause.(‰„ª†úÿÿÿÿ8ÀªÒÈ2
+X
+java:S6437W"6Revoke and change this password, as it is compromised.(¹İ¼ÿÿÿÿÿ8™ÃÑÈ2
+V	java:S106"9Replace this use of System.out or System.err by a logger.(àª¹¦8£ÃÑÈ2
+[	java:S106"9Replace this use of System.out or System.err by a logger.(ü„âøÿÿÿÿ8¥ÃÑÈ2

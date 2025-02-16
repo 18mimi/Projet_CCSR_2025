@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alertes Personnalisées</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-size: 14px;
+            color: #555;
+        }
+
+        input[type="text"], input[type="email"], select {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .success-message {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Créer une Alerte</h1>
+    <form id="alertForm">
+        <label for="email">Adresse Email</label>
+        <input type="email" id="email" placeholder="Entrez votre email..." required>
+
+        <label for="preference">Préférence (Mot-Clé)</label>
+        <input type="text" id="preference" placeholder="Entrez un mot-clé (ex : technologie)" required>
+
+        <label for="frequency">Fréquence des Alertes</label>
+        <select id="frequency">
+            <option value="quotidien">Quotidien</option>
+            <option value="hebdomadaire">Hebdomadaire</option>
+            <option value="mensuel">Mensuel</option>
+        </select>
+
+        <button type="submit">Créer une Alerte</button>
+    </form>
+    <div class="success-message" id="successMessage"></div>
+</div>
+
+<script>
+    document.getElementById('alertForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const email = document.getElementById('email').value;
+        const motCle = document.getElementById('preference').value;
+        const frequency = document.getElementById('frequency').value;
+        console.log("1")
+
+        try {
+            console.log("1")
+            const response = await fetch('http://localhost:8080/createAlert', {
+                            method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: email,
+                    motCle: motCle,
+                    frequency: frequency
+                })
+            });
+            console.log("1")
+            if (!response.ok) {
+                throw new Error(`Erreur serveur: ${response.status}`);
+            }
+
+            const data = await response.json();
+            console.log("Réponse du serveur:", data);
+
+            if (data.success) {
+                document.getElementById('successMessage').innerText = "Alerte créée avec succès!";
+                document.getElementById('successMessage').className = "success";
+            } else {
+                document.getElementById('successMessage').innerText = "Erreur lors de la création de l'alerte.";
+                document.getElementById('successMessage').className = "error";
+            }
+        } catch (error) {
+            console.error('Erreur:', error);
+            document.getElementById('successMessage').innerText = "Impossible de contacter le serveur.";
+            document.getElementById('successMessage').className = "error";
+        }
+    });
+</script>
+
+</body>
+</html>

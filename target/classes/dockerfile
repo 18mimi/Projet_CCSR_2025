@@ -1,0 +1,11 @@
+# Utilisation de l'image OpenJDK 17
+FROM openjdk:17
+
+# Définition du répertoire de travail
+WORKDIR /app
+
+# Copier le JAR de l'application dans l'image
+COPY target/Projet_CCSR_2025-1.0-SNAPSHOT.jar app.jar
+
+# Définir la commande de démarrage
+CMD ["java", "-jar", "app.jar"]
